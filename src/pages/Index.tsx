@@ -4,6 +4,11 @@ import NavigationSidebar from "@/components/dashboard/NavigationSidebar";
 import QueryInterface from "@/components/search/QueryInterface";
 import DocumentUploader from "@/components/upload/DocumentUploader";
 import SystemMetrics from "@/components/analytics/SystemMetrics";
+import KnowledgeGraph from "@/components/knowledge/KnowledgeGraph";
+import AIModels from "@/components/models/AIModels";
+import HotSwap from "@/components/hotswap/HotSwap";
+import SecurityCenter from "@/components/security/SecurityCenter";
+import Settings from "@/components/settings/Settings";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("search");
@@ -17,40 +22,15 @@ const Index = () => {
       case "analytics":
         return <SystemMetrics />;
       case "knowledge":
-        return (
-          <div className="text-center py-12">
-            <h3 className="text-lg font-semibold mb-2">Knowledge Graph</h3>
-            <p className="text-muted-foreground">Document relationship visualization coming soon...</p>
-          </div>
-        );
+        return <KnowledgeGraph />;
       case "models":
-        return (
-          <div className="text-center py-12">
-            <h3 className="text-lg font-semibold mb-2">AI Model Management</h3>
-            <p className="text-muted-foreground">Model configuration and optimization tools...</p>
-          </div>
-        );
+        return <AIModels />;
       case "hotswap":
-        return (
-          <div className="text-center py-12">
-            <h3 className="text-lg font-semibold mb-2">Hot Swap Configuration</h3>
-            <p className="text-muted-foreground">Zero-downtime component updates...</p>
-          </div>
-        );
+        return <HotSwap />;
       case "security":
-        return (
-          <div className="text-center py-12">
-            <h3 className="text-lg font-semibold mb-2">Security Center</h3>
-            <p className="text-muted-foreground">Access control and audit logs...</p>
-          </div>
-        );
+        return <SecurityCenter />;
       case "settings":
-        return (
-          <div className="text-center py-12">
-            <h3 className="text-lg font-semibold mb-2">System Settings</h3>
-            <p className="text-muted-foreground">Global configuration options...</p>
-          </div>
-        );
+        return <Settings />;
       default:
         return <QueryInterface />;
     }
